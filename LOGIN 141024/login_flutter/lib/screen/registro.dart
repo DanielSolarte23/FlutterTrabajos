@@ -16,8 +16,8 @@ class _registerState extends State<register> {
 
   Future<void> _guardarUsuario(String correo, String password) async {
     final varPreferences = await SharedPreferences.getInstance();
-    varPreferences.setString("userCorreo", correo);
-    varPreferences.setString("userPassword", password);
+    await varPreferences.setString("userCorreo", correo);
+    await varPreferences.setString("userPassword", password);
     //mensaje de validacion
 
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Datos guardados exitosamente')));
