@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_flutter/screen/registro.dart';
 import 'package:login_flutter/screen/suma.dart';
 
 class menuOption extends StatefulWidget {
@@ -37,7 +38,7 @@ class _menuOptionState extends State<menuOption> {
             child: ListTile(
               title: const Text(
                 "Suma",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey, fontSize: 20),
               ),
               leading: const Icon(Icons.add),
               trailing: const Icon(Icons.arrow_circle_right_outlined),
@@ -52,7 +53,7 @@ class _menuOptionState extends State<menuOption> {
             child: ListTile(
               title: const Text(
                 "Calculadora",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey, fontSize: 20),
               ),
               leading: const Icon(Icons.calculate),
               trailing: const Icon(Icons.arrow_circle_right_outlined),
@@ -64,11 +65,14 @@ class _menuOptionState extends State<menuOption> {
             child: ListTile(
               title: const Text(
                 "Registro",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey, fontSize: 20),
               ),
               leading: const Icon(Icons.account_circle_sharp),
               trailing: const Icon(Icons.arrow_circle_right_outlined),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => register()));
+              },
             ),
           ),
           Card(
@@ -76,7 +80,7 @@ class _menuOptionState extends State<menuOption> {
             child: ListTile(
               title: const Text(
                 "Login",
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey, fontSize: 20),
               ),
               leading: const Icon(Icons.add_card_outlined),
               trailing: const Icon(Icons.arrow_circle_right_outlined),
@@ -85,7 +89,7 @@ class _menuOptionState extends State<menuOption> {
           ),
         ],
       ),
-      backgroundColor: Colors.grey[600],
+      backgroundColor: Colors.grey[200],
     );
   }
 }
